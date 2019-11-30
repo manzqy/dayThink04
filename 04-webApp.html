@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #first {
+            color: green;
+        }
+        #second {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <ul id="first"></ul>
+    <script>
+        let first = document.querySelector('#first');
+        function addMsg(element, text) {
+            let li = document.createElement('li');
+            li.innerText = text;
+            element.appendChild(li);
+        }
+        addMsg(first, "Page loading");
+    </script>
+    <ul id="second"></ul>
+    <script>
+        document.body.addEventListener("mousemove", function() {
+            var second = document.querySelector('#second');
+            addMsg(second, "Event: mousemove");
+        })
+        document.body.addEventListener("click", function() {
+            var second = document.querySelector('#second');
+            addMsg(second, "Event: click");
+        })
+    </script>
+</body>
+</html>
